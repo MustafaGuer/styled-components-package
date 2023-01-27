@@ -4,6 +4,7 @@ import styled from "styled-components";
 import Button from "../../UI/Button/Button";
 import "./CourseInput.css";
 
+// TODO STYLED COMPONENTS PACKAGE EXAMPLE
 const FormControl = styled.div`
   margin: 0.5rem 0;
 
@@ -64,6 +65,7 @@ const CourseInput = (props) => {
 
   return (
     <form onSubmit={formSubmitHandler}>
+      {/* TODO DIFFERENT CONDITIONAL CLASS AND STYLES ADD AND REMOVE */}
       {/* <div className={`form-control ${!isValid ? "invalid" : ""}`}> */}
       {/* <FormControl className={!isValid && "invalid"}> */}
       <FormControl invalid={!isValid}>
