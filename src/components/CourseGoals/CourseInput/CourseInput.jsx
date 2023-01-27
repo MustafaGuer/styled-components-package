@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 import Button from "../../UI/Button/Button";
 import "./CourseInput.css";
+import styles from "./CourseInput.module.css";
 
 // TODO STYLED COMPONENTS PACKAGE EXAMPLE
 const FormControl = styled.div`
@@ -67,8 +68,15 @@ const CourseInput = (props) => {
     <form onSubmit={formSubmitHandler}>
       {/* TODO DIFFERENT CONDITIONAL CLASS AND STYLES ADD AND REMOVE */}
       {/* <div className={`form-control ${!isValid ? "invalid" : ""}`}> */}
+
+      {/* TODO STYLED COMPONENT DIV */}
       {/* <FormControl className={!isValid && "invalid"}> */}
-      <FormControl invalid={!isValid}>
+      {/* <FormControl invalid={!isValid}> */}
+
+      {/* TODO CSS MODULES */}
+      <div
+        className={`${styles["form-control"]} ${!isValid && styles.invalid}`}
+      >
         {/* CONDITIONAL INLINE STYLE */}
         {/* <label style={{ color: !isValid ? "red" : "black" }}>Course Goal</label> */}
         <label style={{ color: !isValid ? "red" : "black" }}>Course Goal</label>
@@ -77,7 +85,8 @@ const CourseInput = (props) => {
           onChange={goalInputChangeHandler}
           value={enteredValue}
         />
-      </FormControl>
+      </div>
+      {/* </FormControl> */}
       {/* </div> */}
       <Button type="submit">Add Goal</Button>
     </form>
